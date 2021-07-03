@@ -17,14 +17,14 @@ td, th {
 
 <h1>Users Details</h1>
 <table>
-  {% for user in usersDetails %}
   <tr>
     <th>Full name</th>
     <th>Age</th>
     <th>Email</th>
     <th>Mobile</th>
     <th>Location</th>
-  </tr>
+ </tr>
+  {% for user in usersDetails %}
  <tr>
   <td>{{user[0]}}</td>
   <td>{{user[1]}}</td>
