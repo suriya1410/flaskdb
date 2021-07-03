@@ -21,7 +21,7 @@ def index():
         mobile = details['mobile']
         location = details['location']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO userdata(name, age, email, mobile, location) VALUES (%s, %s, %s, %s)", (name, age, email, mobile, location))
+        cur.execute("INSERT INTO userdata(name, age, email, mobile, location) VALUES (%s, %s, %s, %s, %s)", (name, age, email, mobile, location))
         mysql.connection.commit()
         cur.close()
         return 'success'
