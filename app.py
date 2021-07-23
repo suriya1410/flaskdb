@@ -4,7 +4,7 @@ import logging
 
 app = Flask(__name__)
 logging.basicConfig(filename='flask.log', level=logging.INFO,format='%(levelname)s:%(message)s')
-app.config['MYSQL_HOST'] = 'database-my.caomyyms75ok.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_HOST'] = 'database-my.cshux5aaxeaw.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'suriya'
 app.config['MYSQL_PASSWORD'] = 'suriya123'
 app.config['MYSQL_DB'] ='regform'
