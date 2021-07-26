@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
-import mysql.connector
+import mysql.connector as mysql
 import logging
 
 app = Flask(__name__)
@@ -10,34 +10,16 @@ app.config['MYSQL_USER'] = 'suriya'
 app.config['MYSQL_PASSWORD'] = 'suriya123'
 app.config['MYSQL_DB'] ='regform'
 
-mydb = mysql.connector.connect(
-  host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
-  user="suriya",
-  password="suriya123"
+
+db = mysql.connect(
+    host = "database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
+    user = "suriya",
+    passwd = "suriya123"
 )
-
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE DATABASE IF NOT EXISTS regform")
-
-
-
-mydb = mysql.connector.connect(
-  host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
-  user="suriya",
-  password="suriya123",
-  database="regform"
-)
-
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE TABLE IF NOT EXISTS userdata(name VARCHAR(150), age INT(3), email VARCHAR(150), mobile VARCHAR(10), location VARCHAR(100))")
-
-
-
-
-
-
+cursor = db.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
+cursor.execute("USE regform")
+cursor.execute("CREATE TABLE IF NOT EXISTS userdata(name VARCHAR(150), age INT(3), email VARCHAR(150), mobile VARCHAR(10), location VARCHAR(100))") 
 mysql = MySQL(app)
 
 
