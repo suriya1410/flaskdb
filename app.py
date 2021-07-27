@@ -47,7 +47,6 @@ def users():
     resultValue = cur.execute("SELECT * FROM userdata")
     if resultValue > 0:
         usersDetails = cur.fetchall()
-
         return render_template('users.html',usersDetails=usersDetails)
 
 if __name__ == '__main__':
