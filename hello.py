@@ -2,6 +2,17 @@ from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector
 
+
+mydb = mysql.connector.connect(
+  host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
+  user="suriya",
+  password="suriya123"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE DATABASE IF NOT EXISTS regform")
+
 app = Flask(__name__)
 
 
