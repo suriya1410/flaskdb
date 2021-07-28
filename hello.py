@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
 import mysql.connector
 
+from flask import Flask, render_template, request
+from flask_mysqldb import MySQL
 
 mydb = mysql.connector.connect(
   host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
