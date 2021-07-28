@@ -10,15 +10,7 @@ app.config['MYSQL_USER'] = 'suriya'
 app.config['MYSQL_PASSWORD'] = 'suriya123'
 app.config['MYSQL_DB'] ='regform'
 
-mydb = mysql.connector.connect(
-  host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
-  user="suriya",
-  password="suriya123"
-)
 
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE DATABASE IF NOT EXISTS regform")
 
 
 mysql = MySQL(app)
