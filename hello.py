@@ -1,17 +1,15 @@
-import mysql.connector
+import mysql.connector as mysql
 
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
-mydb = mysql.connector.connect(
-  host="database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
-  user="suriya",
-  password="suriya123"
+db = mysql.connect(
+    host = "database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
+    user = "suriya",
+    passwd = "suriya123"
 )
-
-mycursor = mydb.cursor()
-
-mycursor.execute("CREATE DATABASE IF NOT EXISTS regform")
+cursor = db.cursor()
+cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
 
 app = Flask(__name__)
 
