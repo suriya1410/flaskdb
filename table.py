@@ -5,4 +5,4 @@ db = mysql.connect(
     passwd = "suriya123"
 )
 cursor = db.cursor()
-cursor.execute("CREATE DATABASE regform")
+cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
