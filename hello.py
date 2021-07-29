@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector as mysql
+import table
 
 
 app = Flask(__name__)
