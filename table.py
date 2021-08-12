@@ -8,5 +8,5 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
-time.sleep(300)
+time.sleep(500)
 
