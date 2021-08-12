@@ -9,7 +9,7 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
-time.sleep(200)
+time.sleep(600)
 
 
 app = Flask(__name__)
