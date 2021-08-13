@@ -9,7 +9,6 @@ db = mysql.connect(
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
 cursor.commit()
-cursor.close()
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'database-my.caomyyms75ok.us-east-1.rds.amazonaws.com'
