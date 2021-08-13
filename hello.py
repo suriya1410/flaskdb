@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 import mysql.connector as mysql
-import time
 db = mysql.connect(
     host = "database-my.caomyyms75ok.us-east-1.rds.amazonaws.com",
     user = "suriya",
@@ -9,8 +8,8 @@ db = mysql.connect(
 )
 cursor = db.cursor()
 cursor.execute("CREATE DATABASE IF NOT EXISTS regform")
-time.sleep(600)
-
+cursor.commit()
+cursor.close()
 
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'database-my.caomyyms75ok.us-east-1.rds.amazonaws.com'
