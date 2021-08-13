@@ -25,7 +25,6 @@ def index():
         mobile = details['mobile']
         location = details['location']
         cur = mysql.connection.cursor()
-        cur.execute("CREATE TABLE IF NOT EXISTS regform")
         cur.execute("CREATE TABLE IF NOT EXISTS userdata(name VARCHAR(150), age INT(3), email VARCHAR(150), mobile VARCHAR(10), location VARCHAR(100))") 
         cur.execute("INSERT INTO userdata(name, age, email, mobile, location) VALUES (%s, %s, %s, %s, %s)", (name, age, email, mobile, location))
         mysql.connection.commit()
